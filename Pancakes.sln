@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pancakes", "Pancakes\Pancakes.csproj", "{EDF86144-73DA-423A-8E01-F00949938BC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDF86144-73DA-423A-8E01-F00949938BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF86144-73DA-423A-8E01-F00949938BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF86144-73DA-423A-8E01-F00949938BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF86144-73DA-423A-8E01-F00949938BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1BC60A6-872E-4882-B818-4148480FEA25}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,78 @@
+﻿<Window x:Class="Pancakes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pancakes"
+        mc:Ignorable="d"
+        Title="Palacsintázó" Height="700" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label FontSize="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Black" Grid.ColumnSpan="2" Foreground="#FFFF9700">
+            Palacsintázó
+        </Label>
+        <StackPanel Grid.Row="1" Margin="20" VerticalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="local:NumberBox">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+            </StackPanel.Resources>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalContentAlignment="Right" VerticalAlignment="Center">Darab</Label>
+                <local:NumberBox x:Name="nField" Grid.Column="1" Number="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalContentAlignment="Right" VerticalAlignment="Center">Tészta típus</Label>
+                <ComboBox x:Name="doughField" Grid.Column="1" SelectedIndex="0"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="label" HorizontalContentAlignment="Right" VerticalAlignment="Center">Töltelék típus</Label>
+                <ComboBox x:Name="fillingField" Grid.Column="1" SelectedIndex="0"/>
+            </Grid>
+            <Button x:Name="addButton" Click="addButton_Click">Hozzáadás</Button>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer>
+                <StackPanel Background="#FFEAEAEA" x:Name="outputPanel">
+                    <StackPanel.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="FontFamily" Value="Courier New"/>
+                            <Setter Property="Margin" Value="20,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Label HorizontalContentAlignment="Center">--- NYUGTA ---</Label>
+                    <Label HorizontalContentAlignment="Center">Palacsintázó Zrt.</Label>
+                    <Label HorizontalContentAlignment="Center">--- TERMÉKEK ---</Label>
+                    <Label/>
+                </StackPanel>
+            </ScrollViewer>
+            <Button Grid.Row="1" Margin="20">Rendelés</Button>
+        </Grid>
+    </Grid>
+</Window>
