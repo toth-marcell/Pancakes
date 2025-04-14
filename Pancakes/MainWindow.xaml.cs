@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Pancakes
 {
@@ -36,6 +37,16 @@ namespace Pancakes
             outputPanel.Children.RemoveAt(outputPanel.Children.Count - 1);
             outputPanel.Children.Add(new Label { Content = pancake.ToString() });
             outputPanel.Children.Add(new Label { Content = "Végösszeg: " + pancakes.Select(p => p.Price).Sum() + " Ft" });
+        }
+
+        private void orderButton_Click(object sender, RoutedEventArgs e)
+        {
+            StreamWriter writer = new StreamWriter("order.csv", false, Encoding.UTF8);
+            writer.WriteLine("n,dough,filling,price");
+            foreach (Pancake pancake in pancakes) writer.WriteLine(pancake.ToCSV());
+            writer.Close();
+            MessageBox.Show("Siker!");
+            Close();
         }
     }
     struct Pancake
@@ -65,5 +76,6 @@ namespace Pancakes
             Filling = filling;
         }
         public override string ToString() => $"{N} db {Dough} tésztás {Filling} palacsinta\t{Price} Ft";
+        public string ToCSV() => $"{N},{Dough},{Filling},{Price}";
     }
 }

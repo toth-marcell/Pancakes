@@ -72,7 +72,7 @@
                     <Label/>
                 </StackPanel>
             </ScrollViewer>
-            <Button Grid.Row="1" Margin="20">Rendelés</Button>
+            <Button Grid.Row="1" Margin="20" x:Name="orderButton" Click="orderButton_Click">Rendelés</Button>
         </Grid>
     </Grid>
 </Window>
