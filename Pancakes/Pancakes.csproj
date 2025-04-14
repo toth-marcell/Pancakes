@@ -76,6 +76,7 @@
     <Compile Include="NumberBox.xaml.cs">
       <DependentUpon>NumberBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pancake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
